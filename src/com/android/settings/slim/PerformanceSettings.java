@@ -151,13 +151,13 @@ public class PerformanceSettings extends SettingsPreferenceFragment implements
                 setCurrentPerfProfileSummary();
                 return true;
             } else if (preference == mScrollingCachePref) {
-                if (objValue != null) {
-                    SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String)objValue);
+                    SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, (String)newValue);
                 return true;
                 }
             }
         return false;
-    }
+    
+}
 
     private void setCurrentPerfProfileSummary() {
         String value = mPowerManager.getPowerProfile();
